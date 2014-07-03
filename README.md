@@ -20,7 +20,11 @@ Or install it yourself as:
 
 ### Include Famo.us javascript assets
 
-    //= require_tree famous
+    //= require class_list
+    //= require function_prototype_bind
+    //= require request_animation_frame
+    //= require require
+    //= require famous
 
 ### Include Famo.us stylesheets assets
 

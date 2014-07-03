@@ -14,7 +14,7 @@ class SourceFile < Thor
   def fetch(owner, repo, file_paths)
     filtered_tags = fetch_tags(owner, repo)
     tag = select("Which tag do you want to fetch?", filtered_tags)
-    self.destination_root = "app/assets"
+    self.destination_root = "vendor/assets"
     remote = "https://github.com/#{owner}/#{repo}"
 
     file_paths.each do |key, value|

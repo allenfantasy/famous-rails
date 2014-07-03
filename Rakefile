@@ -12,9 +12,9 @@ task :update do
 
   # polyfills
   files.fetch("Famous", "polyfills", {
-    "classList.js" => "javascripts/classList.js",
-    "functionPrototypeBind.js" => "javascripts/functionPrototypeBind.js",
-    "requestAnimationFrame.js" => "javascripts/requestAnimationFrame.js",
+    "classList.js" => "javascripts/class_list.js",
+    "functionPrototypeBind.js" => "javascripts/function_prototype_bind.js",
+    "requestAnimationFrame.js" => "javascripts/request_animation_frame.js",
   })
 
   # requirejs
@@ -25,7 +25,7 @@ task :update do
   # famo.us
   files.fetch("Famous", "famous", {
     "dist/famous.css" => "stylesheets/famous.css",
-    "dist/famous.min.js" => "javascripts/famous.min.js"
+    "dist/famous.min.js" => "javascripts/famous.js"
   })
 
 end
