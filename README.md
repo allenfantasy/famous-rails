@@ -18,7 +18,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Include Famo.us javascript assets
+
+    //= require famous
+
+### Include Famo.us stylesheets assets
+
+    *= require famous
 
 ## Contributing
 

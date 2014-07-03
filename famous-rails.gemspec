@@ -21,5 +21,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "thor", "~> 0.19"
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake", "~> 10.3"
-  spec.add_development_dependency "httpclient", "~> 2.4.0"
+  spec.add_development_dependency "httpclient", "~> 2.4"
 end
