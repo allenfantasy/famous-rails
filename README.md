@@ -18,17 +18,104 @@ Or install it yourself as:
 
 ## Usage
 
-### Include Famo.us javascript assets
+Say we have a Famo.us App like following:
 
-    //= require class_list
-    //= require function_prototype_bind
-    //= require request_animation_frame
-    //= require require
-    //= require famous
+```javascript
+- app/
+  - content/
+    - fonts/
+      - a.ttf
+    - images/
+      - famous_logo.png
+  - index.html
+  - lib/
+    - ...
+  - src/
+    - main.js
+    - requireConfig.js
+    - views/
+        - ...
+  - styles/
+    - app.css
+```
 
-### Include Famo.us stylesheets assets
+And here we want to move this app into Rails. [sounds like a fool, 
+but sometimes we have to, LOL]
 
-    *= require famous
+### Javascript
+
+Setup a file structure as following:
+```javascript
+- app/
+  - assets/
+    - javascripts/
+      - subapp/
+        - app.js
+        - main.js (should be the entrance of your Famo.us App)
+        - requireConfig.js
+        - views/
+      - subapp.js
+```
+
+In `subapp/app.js`:
+```javascript
+//= require require
+//= require ./requireConfig
+//= require famous
+//= require ./main
+```
+
+In `subapp.js`:
+```javascript
+//= require class_list
+//= require function_prototype_bind
+//= require request_animation_frame
+    
+//= require subapp/app
+```
+
+In `requireConfig.js`
+
+```javascript
+/*globals require*/
+require.config({
+    baseUrl: 'assets/subapp', // ATTENTION: ADD THIS LINE
+    shim: {
+
+    },
+    paths: {
+        famous: '../lib/famous',
+        requirejs: '../lib/requirejs/require',
+        almond: '../lib/almond/almond'
+    },
+    packages: [
+
+    ]
+});
+require(['main']);
+```
+
+### Stylesheets
+
+Create `subapp.css` in `app/assets/stylesheets`
+
+```css
+/*
+ *= require famous
+ */
+
+/* Your Own App CSS */
+@font-face {
+  font-family: 'myFont';
+  src: url('myfont.ttf');
+}
+
+html {
+  background: #fff;
+}
+```
+
+### Image & Fonts [TBD]
 
 ## Contributing
 
