@@ -1,6 +1,10 @@
 # Famous-Rails
 
 **Famo.us for Rails assets pipeline**
+## Warning!
+
+This gem may have several issues when used in production mode because of the conflict between assets pipeline & RequireJS.
+But it (should) work well in dev mode.
 
 ## Installation
 
