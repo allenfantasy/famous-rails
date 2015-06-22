@@ -3,8 +3,10 @@
 **Famo.us for Rails assets pipeline**
 ## Warning!
 
-This gem may have several issues when used in production mode because of the conflict between assets pipeline & RequireJS.
+* This gem may have several issues when used in production mode because of the conflict between assets pipeline & RequireJS.
 But it (should) work well in dev mode.
+* Since Famo.us has promoted its brand new [Famous Engine](http://famous.org/), which is not compatible with the old Famo.us (<= 0.3), this repo would fail if you are using the latest famo.us codebase.
+* I would like to improve this but short of time. [Contributions](#contributing) needed!
 
 ## Installation
 
